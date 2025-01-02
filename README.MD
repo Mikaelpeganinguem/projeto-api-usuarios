@@ -41,7 +41,12 @@ Este projeto receberá futuramente uma inteface web (com HTML e CSS), e um banco
 
 ---
 
-### Autor
-- Mikael Carlos Ribeiro de França
-- Pessoal: carlosmikael273@gmail.com
-- Institucional: mcrf1@aluno.ifal.edu.br
+### Contato
+
+Se você tiver alguma dúvida ou quiser discutir sobre o projeto, pode entrar em contato!
+
+- E-mail: carlosmikael273@gmail.com
+- GitHub: [MIkaelpeganinguem](https://github.com/seu-usuario)
+
+Estou aberto a sugestões e contribuições!
+
