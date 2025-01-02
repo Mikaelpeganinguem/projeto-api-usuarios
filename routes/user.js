@@ -29,7 +29,7 @@ router.post("/api/users/", (req, res) => {
     const users = readFile()
     const { username, email, password } = req.body;
 
-    if (!username || !email || !password) {
+    if (!username) {
         return res.status(400).send({ error: "Bad request", msg: "username, email and password are obrigatory" });
     }
     if(!isEmail(email)){
