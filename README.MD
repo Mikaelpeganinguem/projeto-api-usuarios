@@ -26,7 +26,7 @@ Este é um projeto simples de API RESTful utilizando Node.js e Express. A API ge
 2. **Instale as dependências**:
 
     ```bash
-    npm init
+    npm i
 
 3. **Inicie o servidor**:
     
