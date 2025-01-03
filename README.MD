@@ -1,6 +1,8 @@
-# Projeto API de Usuários - Express
+# API de Usuários - Express
 
-Este é um projeto simples de API RESTful utilizando Node.js e Express. A API gerencia usuários, armazenando-os em um arquivo JSON (`users.json`). Ela suporta as operações básicas de CRUD (Create, Read, Update, Delete) para usuários, permitindo adicionar, listar, atualizar e deletar usuários.
+--- 
+
+Este é um projeto simples de gerenciamento de usuários que permite cadastrar, visualizar, editar e deletar usuários. Foi desenvolvido para praticar conceitos de desenvolvimento web utilizando Node.js, Express, EJS e File System (FS) para armazenamento de dados.
 
 ## Funcionalidades
 
@@ -15,6 +17,8 @@ Este é um projeto simples de API RESTful utilizando Node.js e Express. A API ge
 - Node.js
 - Express.js
 - File System (fs) para leitura e escrita de arquivos JSON
+- EJS para a criação dos templates
+- CSS para a estilização das páginas
 
 ## Instalação
 
@@ -33,13 +37,42 @@ Este é um projeto simples de API RESTful utilizando Node.js e Express. A API ge
     ```bash
     npm start
 
+4. **Acesse a aplicação no navegador**
+    
+    ´´´bash
+    http://localhost:3000
+
 
 ---
 
-### Possíveis modificações
-Este projeto receberá futuramente uma inteface web (com HTML e CSS), e um banco de dados (MySQL). Além de melhorias no código, atual como melhoria nas verificações, mensagens mais claras e etc.
+## Estrutura do projeto
+
+api-usuarios/
+├── public/                  # Arquivos estáticos (CSS, imagens, etc.)
+│   ├── home.css
+├── views/                   # Templates EJS
+│   ├── users.ejs
+│   ├── table.ejs
+│   ├── partials/
+│       ├── header.ejs
+├── routes/                  # Rotas da aplicação
+│   ├── user.js
+│   ├── home.js
+├── database/
+│   ├── users/               # Simula o banco de dados
+│       ├── dbUser.js
+├── index.js                 # Arquivo principal
+├── package.json             # Dependências e scripts do projeto
+├── README.md                # Documentação do projeto
+
 
 ---
+
+## Endpoints
+
+### **Rotas principais**
+-- 
+
 
 ### Contato
 
