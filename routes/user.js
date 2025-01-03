@@ -26,7 +26,6 @@ router.get("/api/users/:id", (req, res) => {
 
 
 router.post("/api/users/", (req, res) => {
-    const users = readFile()
     const { username, email, password } = req.body;
 
     if (!username) {
@@ -38,7 +37,7 @@ router.post("/api/users/", (req, res) => {
     if(password.length < 8){
         return res.status(400).send({ error: "Bad request", msg: "the password must be at least 8 characters long"});
     } 
-    
+    const users = readFile()    
     
     const newuser = { 
         id: new Date().getTime(), 
@@ -54,28 +53,24 @@ router.post("/api/users/", (req, res) => {
 
 
 router.put("/api/users/:id", (req, res) => {
-    const users = readFile();
     const userId = parseInt(req.params.id);
     const { username, email, password } = req.body;
 
-    if (!username || !email || !password) {
-        return res.status(400).send({ error: "Bad request", msg: "username, email and password are obrigatory" });
+    if(!username.trim() === ""){
+        return res.status(400).send({ error: "Bad request", msg: "Fill in username"});
+    }
+    if(!isEmail(email)){
+        return res.status(400).send({ error: "Bad request", msg: "Email is not avaliable"});
+    }
+    if(password.length < 8){
+        return res.status(400).send({ error: "Bad request", msg: "the password must be at least 8 characters long"});
     }
 
+    const users = readFile();
     const index = users.findIndex((user) => user.id === userId);
     if (index === -1) {
         return res.status(404);
     } else {
-        if(!username.trim() === ""){
-            return res.status(400).send({ error: "Bad request", msg: "Fill in username"});
-        }
-        if(!isEmail(email)){
-            return res.status(400).send({ error: "Bad request", msg: "Email is not avaliable"});
-        }
-        if(password.length < 8){
-            return res.status(400).send({ error: "Bad request", msg: "the password must be at least 8 characters long"});
-        }
-        
         users[index].username = username;
         users[index].email = email;
         users[index].password = password;
@@ -86,12 +81,12 @@ router.put("/api/users/:id", (req, res) => {
 
 
 router.delete("/api/users/:id", (req, res) => {
-    const users = readFile();
     const userId = parseInt(req.params.id);
     if (isNaN(userId)) {
         return res.status(400).send({error: "bad request", msg: "is not a number"});
     }
-
+    
+    const users = readFile();
     const index = users.findIndex((user) => user.id === userId);
     if (index === -1) {
         return res.status(404).send({msg: "user not found"});
