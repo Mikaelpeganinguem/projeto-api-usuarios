@@ -46,7 +46,7 @@ Este projeto receberá futuramente uma inteface web (com HTML e CSS), e um banco
 Se você tiver alguma dúvida ou quiser discutir sobre o projeto, pode entrar em contato!
 
 - E-mail: carlosmikael273@gmail.com
-- GitHub: [MIkaelpeganinguem](https://github.com/seu-usuario)
+- GitHub: [MIkaelpeganinguem](https://github.com/MIkaelpeganinguem)
 
 Estou aberto a sugestões e contribuições!
 
