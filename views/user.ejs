@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/user.css">
     <title>Register - User</title>
 </head>
 
@@ -20,15 +21,17 @@
     </header>
 
     <div class="container">
-        <form action="/api/users" method="post">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" required>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required minlength="8">
-            <input type="submit" value="Register">
-        </form>
+        <div class="form">
+            <form action="/api/users" method="post">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required minlength="8">
+                <input type="submit" value="Register">
+            </form>
+        </div>
 
         <% if (typeof message !== 'undefined' && message) { %>
             <div class="<%= message.type %>">

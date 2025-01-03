@@ -1,12 +1,19 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
 header {
-    background-color: #2c3e50; 
-    padding: 20px; 
+    background-color: #2c3e50;
+    padding: 20px;
     display: flex;
     justify-content: center;
 }
@@ -28,7 +35,7 @@ header .options ul {
 
 header .options ul li a {
     text-decoration: none;
-    color: white; 
+    color: white;
     font-weight: bold;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -36,4 +43,62 @@ header .options ul li a {
 
 header .options ul li a:hover {
     color: #1abc9c;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 20px;
+}
+
+
+.intro {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #34495e;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.intro ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.intro ul li {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.intro ul li:before {
+    content: '✔';
+    color: #1abc9c;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    line-height: 1;
 }

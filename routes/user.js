@@ -11,6 +11,20 @@ function getMessage(type, msg) {
     return { type, msg };
 }
 
+function verifyUser(username, email, password){
+    if (!username || !email || !password) {
+        const message = getMessage('error', "Username, email, and password are required");
+        return res.status(400).render('user', { message });
+    }
+    if (!isEmail(email)) {
+        const message = getMessage('error', "Invalid email format");
+        return res.status(400).render('user', { message });
+    }
+    if (password.length < 8) {
+        const message = getMessage('error', "Password must be at least 8 characters long");
+        return res.status(400).render('user', { message });
+    }
+}
 
 router.get("/api/users/table", (req, res) => {
     const users = readFile();
@@ -20,7 +34,7 @@ router.get("/api/users/table", (req, res) => {
 
 router.get("/api/users", (req, res) => {
     const users = readFile();
-    return res.render('users', { users });
+    return res.render('user', { users });
 });
 
 
@@ -38,18 +52,7 @@ router.get("/api/users/:id", (req, res) => {
 router.post("/api/users/", (req, res) => {
     const { username, email, password } = req.body;
 
-    if (!username || !email || !password) {
-        const message = getMessage('error', "Username, email, and password are required");
-        return res.status(400).render('user', { message });
-    }
-    if (!isEmail(email)) {
-        const message = getMessage('error', "Invalid email format");
-        return res.status(400).render('user', { message });
-    }
-    if (password.length < 8) {
-        const message = getMessage('error', "Password must be at least 8 characters long");
-        return res.status(400).render('user', { message });
-    }
+    verifyUser(username, email, password);
 
     const users = readFile();
     const newUser = {
@@ -70,18 +73,7 @@ router.put("/api/users/:id", (req, res) => {
     const userId = parseInt(req.params.id);
     const { username, email, password } = req.body;
 
-    if (username.trim() === "") {
-        const message = getMessage('error', "Username is required");
-        return res.status(400).render('user', { message });
-    }
-    if (!isEmail(email)) {
-        const message = getMessage('error', "Invalid email format");
-        return res.status(400).render('user', { message });
-    }
-    if (password.length < 8) {
-        const message = getMessage('error', "Password must be at least 8 characters long");
-        return res.status(400).render('user', { message });
-    }
+    verifyUser(username, email, password);
 
     const users = readFile();
     const index = users.findIndex((user) => user.id === userId);
