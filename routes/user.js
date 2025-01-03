@@ -11,7 +11,8 @@ function isEmail(email) {
 
 router.get("/api/users", (req, res) => {
     const users = readFile();
-    res.send(users);
+    console.log("msg: ", msg);
+    return res.render('user', { users });
 });
 
 
@@ -48,7 +49,9 @@ router.post("/api/users/", (req, res) => {
 
     users.push(newuser);
     saveData(users);
-    return res.status(201).send(newuser);
+    
+    console.log("msg: ", msg);
+    return res.render('user', { msg: "userUser successfully registered!" });
 });
 
 
@@ -76,7 +79,8 @@ router.put("/api/users/:id", (req, res) => {
         users[index].password = password;
         saveData(users);
     }
-    return res.status(201).send({ msg: "Data updated." });
+    console.log("msg: ", msg);
+    return res.render('user', { msg: "User updated sucessfully!" });
 });
 
 
@@ -93,7 +97,9 @@ router.delete("/api/users/:id", (req, res) => {
     }
     users.splice(index, 1);
     saveData(users);
-    return res.status(201).send({ msg: "user deleted with sucessfull" });
+
+    console.log("msg: ", msg);
+    return res.render('user', { msg: "User deleted successfully!" });
 });
 
 

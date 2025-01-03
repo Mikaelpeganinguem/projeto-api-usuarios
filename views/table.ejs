@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home.css">
+    <title>View all users</title>
+</head>
+
+<body>
+    <header>
+        <div class="options">
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/api/users">Register</a></li>
+                <li><a href="table.ejs">Users</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>username</th>
+                    <th>Email</th>
+                    <th>password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                   <%= if(users.length > 0){ %>
+                        <%= users.forEach(user => { %>
+                            <td><%= user.id %> </td>
+                            <td><$= user.username %></td>
+                            <td><$= user.email %></td>
+                            <td><$= user.password %></td>
+                        <%= }); $>
+                    <%= }else{ %>
+                        <td>You haven't registered new users yet</td>
+                    <%= } %>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

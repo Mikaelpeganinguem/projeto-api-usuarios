@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
 
@@ -7,6 +8,10 @@ const homeRoute = require('./routes/home');
 
 const PORT = process.env.PORT || 3000;
 
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', homeRoute);
 app.use('/', userRoute);
