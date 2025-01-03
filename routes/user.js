@@ -8,6 +8,18 @@ function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 }
 
+function verifyUser(username, email, password){
+    if (!username || username.trim() === "") {
+        return res.status(400).send({ error: "Bad request", msg: "username, email and password are obrigatory" });
+    }
+    if(!isEmail(email)){
+        return res.status(400).send({ error: "Bad request", msg: "Email is not avaliable"});
+    }
+    if(password.length < 8){
+        return res.status(400).send({ error: "Bad request", msg: "the password must be at least 8 characters long"});
+    }
+}
+
 
 router.get("/api/users", (req, res) => {
     const users = readFile();
@@ -28,15 +40,8 @@ router.get("/api/users/:id", (req, res) => {
 router.post("/api/users/", (req, res) => {
     const { username, email, password } = req.body;
 
-    if (!username) {
-        return res.status(400).send({ error: "Bad request", msg: "username, email and password are obrigatory" });
-    }
-    if(!isEmail(email)){
-        return res.status(400).send({ error: "Bad request", msg: "Email is not avaliable"});
-    }
-    if(password.length < 8){
-        return res.status(400).send({ error: "Bad request", msg: "the password must be at least 8 characters long"});
-    } 
+    verifyUser(username, email, password)
+    
     const users = readFile()    
     
     const newuser = { 
@@ -56,15 +61,7 @@ router.put("/api/users/:id", (req, res) => {
     const userId = parseInt(req.params.id);
     const { username, email, password } = req.body;
 
-    if(!username.trim() === ""){
-        return res.status(400).send({ error: "Bad request", msg: "Fill in username"});
-    }
-    if(!isEmail(email)){
-        return res.status(400).send({ error: "Bad request", msg: "Email is not avaliable"});
-    }
-    if(password.length < 8){
-        return res.status(400).send({ error: "Bad request", msg: "the password must be at least 8 characters long"});
-    }
+    verifyUser(username, email, password)
 
     const users = readFile();
     const index = users.findIndex((user) => user.id === userId);
