@@ -10,12 +10,6 @@ function readFile() {
 
     const data = fs.readFileSync(datafile, 'utf-8');
     return JSON.parse(data);
-    // try {
-    //     return JSON.parse(data);
-    // } catch (error) {
-    //     console.error("Erro ao parsear JSON:", error);
-    //     return [];
-    // }
 }
 
 function saveData(data) {
