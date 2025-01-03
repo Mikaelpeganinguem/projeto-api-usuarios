@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/home.css">
-    <title>Login</title>
+    <title>Register - User</title>
 </head>
+
 <body>
     <header>
         <div class="options">
             <ul>
-                <li><a href="/">home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/api/users">Register</a></li>
-                <li><a href="table.ejs">Users</a></li>
+                <li><a href="/api/users/table">Users</a></li>
             </ul>
         </div>
     </header>
+
     <div class="container">
-        <form action="/api/users/" method="post">
-            <input type="text" name="username" id="username">
-            <input type="email" name="email" id="email">
-            <input type="password" name="password" id="password">
-            <input type="submit" value="Send">
+        <form action="/api/users" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required minlength="8">
+            <input type="submit" value="Register">
         </form>
 
-        <div class="msg">
-            <% if (msg) { %>
-                <p><%= msg %></p>
-            <% } %>
-        </div>                
+        <% if (typeof message !== 'undefined' && message) { %>
+            <div class="<%= message.type %>">
+                <p><%= message.msg %></p>
+            </div>
+        <% } %>
     </div>
 </body>
+
 </html>

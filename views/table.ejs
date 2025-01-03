@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="/">home</a></li>
                 <li><a href="/api/users">Register</a></li>
-                <li><a href="table.ejs">Users</a></li>
+                <li><a href="/api/users/table">Users</a></li>
             </ul>
         </div>
     </header>
@@ -29,18 +29,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                   <%= if(users.length > 0){ %>
-                        <%= users.forEach(user => { %>
-                            <td><%= user.id %> </td>
-                            <td><$= user.username %></td>
-                            <td><$= user.email %></td>
-                            <td><$= user.password %></td>
-                        <%= }); $>
-                    <%= }else{ %>
-                        <td>You haven't registered new users yet</td>
-                    <%= } %>
-                </tr>
+                <% if (users) { %>
+                    <% users.forEach(user => { %>
+                        <tr>
+                            <td><%= user.id %></td>
+                            <td><%= user.username %></td>
+                            <td><%= user.email %></td>
+                        </tr>
+                    <% }); %>
+                <% } %>
             </tbody>
         </table>
     </div>
