@@ -21,4 +21,20 @@ function verifyUser(username, email, password){
     }
 }
 
+const getButtonDelete = document.getElementById('#deleteButton');
+const getButtonEdit = document.getElementById('#deleteButton');
+const getUserTable = document.querySelectorAll('#userTable tr');
+
+getUserTable.addEventListener('mouseenter', () => {
+    getButtonDelete.addEventListener('click', () => {
+        // em estudo
+    });
+});
+
+getUserTable.addEventListener('mouseenter', () => {
+    getButtonEdit.addEventListener('click', () => {
+        // em estudo
+    });
+});
+
 module.exports = { verifyUser, getMessage }
