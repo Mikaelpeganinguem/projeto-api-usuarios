@@ -1,14 +1,10 @@
 # API de Usuários - Express
-
---- 
+---
 
 Este é um projeto simples de gerenciamento de usuários que permite cadastrar, visualizar, editar e deletar usuários. Foi desenvolvido para praticar conceitos de desenvolvimento web utilizando Node.js, Express, EJS e File System (FS) para armazenamento de dados.
 
---
 
 ## Funcionalidades
-
----
 
 - Registro - Registra um novo usuário
 - Visualizar - Uma tabela com todos os usuários cadastrados
@@ -18,11 +14,8 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
 - Edição - Editar os dados de um usuário em específico
 - Excluir - Excluir o usuário da tabela
 
---
 
 ## Tecnologias Utilizadas
-
----
 
 - Node.js
 - Express.js
@@ -30,7 +23,6 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
 - EJS para a criação dos templates
 - CSS para a estilização das páginas
 
---
 
 ## Instalação
 
@@ -51,29 +43,25 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
 
 4. **Acesse a aplicação no navegador**
     
-    ´´´bash
+    ```bash
     http://localhost:3000
 
 
----
-
 ## Endpoints
 
---
 
 ### **Rotas principais**
 
--   ´GET /´ - Rota principal
--   ´GET /api/users´ - Rota de cadastro de usuários
--   ´GET /api/users/table´ - Visualização de todos os usuários cadastrados
+-   `GET /` - Rota principal
+-   `GET /api/users` - Rota de cadastro de usuários
+-   `GET /api/users/table` - Visualização de todos os usuários cadastrados
 
 ### **API Endpoints**
 
--   ´POST /api/users´ - Cadastra novos usuários
--   ´PUT /api/users/:id´ - Edita um usuário em expecífico do id
--   ´DELETE /api/users/:id´ - Exclui um usuário em específico do id
-
--- 
+-   `POST /api/users` - Cadastra novos usuários
+-   `PUT /api/users/:id` - Edita um usuário em expecífico do id
+-   `DELETE /api/users/:id` - Exclui um usuário em específico do id
+ 
 
 ### Contato
 
