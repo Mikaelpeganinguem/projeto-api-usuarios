@@ -52,15 +52,15 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
 
 ### **Rotas principais**
 
--   ´GET /´ - Rota principal
--   ´GET /api/users´ - Rota de cadastro de usuários
--   ´GET /api/users/table´ - Visualização de todos os usuários cadastrados
+-   `GET /` - Rota principal
+-   `GET /api/users` - Rota de cadastro de usuários
+-   `GET /api/users/table` - Visualização de todos os usuários cadastrados
 
 ### **API Endpoints**
 
--   ´POST /api/users´ - Cadastra novos usuários
--   ´PUT /api/users/:id´ - Edita um usuário em expecífico do id
--   ´DELETE /api/users/:id´ - Exclui um usuário em específico do id
+-   `POST /api/users` - Cadastra novos usuários
+-   `PUT /api/users/:id` - Edita um usuário em expecífico do id
+-   `DELETE /api/users/:id` - Exclui um usuário em específico do id
  
 
 ### Contato
