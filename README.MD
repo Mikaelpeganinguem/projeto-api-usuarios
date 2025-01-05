@@ -1,11 +1,12 @@
 # API de Usuários - Express
-- 
+
+---
 
 Este é um projeto simples de gerenciamento de usuários que permite cadastrar, visualizar, editar e deletar usuários. Foi desenvolvido para praticar conceitos de desenvolvimento web utilizando Node.js, Express, EJS e File System (FS) para armazenamento de dados.
 
 
 ## Funcionalidades
--
+---
 
 - Registro - Registra um novo usuário
 - Visualizar - Uma tabela com todos os usuários cadastrados
@@ -17,7 +18,7 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
 
 
 ## Tecnologias Utilizadas
--
+---
 
 - Node.js
 - Express.js
@@ -48,11 +49,10 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
     ´´´bash
     http://localhost:3000
 
--
 
 ## Endpoints
 
--
+---
 
 ### **Rotas principais**
 
