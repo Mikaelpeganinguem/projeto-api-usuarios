@@ -2,29 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const { saveData, readFile } = require('./database/users/dbUser');
-
-function isEmail(email) {
-    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
-}
-
-function getMessage(type, msg) {
-    return { type, msg };
-}
-
-function verifyUser(username, email, password){
-    if (!username || !email || !password) {
-        const message = getMessage('error', "Username, email, and password are required");
-        return res.status(400).render('user', { message });
-    }
-    if (!isEmail(email)) {
-        const message = getMessage('error', "Invalid email format");
-        return res.status(400).render('user', { message });
-    }
-    if (password.length < 8) {
-        const message = getMessage('error', "Password must be at least 8 characters long");
-        return res.status(400).render('user', { message });
-    }
-}
+const { verifyUser, getMessage } = require('../views/utils/utils');
 
 router.get("/api/users/table", (req, res) => {
     const users = readFile();

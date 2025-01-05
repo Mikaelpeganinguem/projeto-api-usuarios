@@ -4,21 +4,33 @@
 
 Este é um projeto simples de gerenciamento de usuários que permite cadastrar, visualizar, editar e deletar usuários. Foi desenvolvido para praticar conceitos de desenvolvimento web utilizando Node.js, Express, EJS e File System (FS) para armazenamento de dados.
 
+--
+
 ## Funcionalidades
 
-- **GET** `/api/users`: Lista todos os usuários cadastrados.
-- **GET** `/api/users/:id`: Retorna os detalhes de um usuário específico, dado seu ID.
-- **POST** `/api/users`: Cria um novo usuário.
-- **PUT** `/api/users/:id`: Atualiza os dados de um usuário específico.
-- **DELETE** `/api/users/:id`: Deleta um usuário específico.
+---
+
+- Registro - Registra um novo usuário
+- Visualizar - Uma tabela com todos os usuários cadastrados
+
+### Em desenvolvimento:
+
+- Edição - Editar os dados de um usuário em específico
+- Excluir - Excluir o usuário da tabela
+
+--
 
 ## Tecnologias Utilizadas
+
+---
 
 - Node.js
 - Express.js
 - File System (fs) para leitura e escrita de arquivos JSON
 - EJS para a criação dos templates
 - CSS para a estilização das páginas
+
+--
 
 ## Instalação
 
@@ -45,34 +57,23 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
 
 ---
 
-## Estrutura do projeto
-
-api-usuarios/
-├── public/                  # Arquivos estáticos (CSS, imagens, etc.)
-│   ├── home.css
-├── views/                   # Templates EJS
-│   ├── users.ejs
-│   ├── table.ejs
-│   ├── partials/
-│       ├── header.ejs
-├── routes/                  # Rotas da aplicação
-│   ├── user.js
-│   ├── home.js
-├── database/
-│   ├── users/               # Simula o banco de dados
-│       ├── dbUser.js
-├── index.js                 # Arquivo principal
-├── package.json             # Dependências e scripts do projeto
-├── README.md                # Documentação do projeto
-
-
----
-
 ## Endpoints
 
-### **Rotas principais**
--- 
+--
 
+### **Rotas principais**
+
+-   ´GET /´ - Rota principal
+-   ´GET /api/users´ - Rota de cadastro de usuários
+-   ´GET /api/users/table´ - Visualização de todos os usuários cadastrados
+
+### **API Endpoints**
+
+-   ´POST /api/users´ - Cadastra novos usuários
+-   ´PUT /api/users/:id´ - Edita um usuário em expecífico do id
+-   ´DELETE /api/users/:id´ - Exclui um usuário em específico do id
+
+-- 
 
 ### Contato
 
