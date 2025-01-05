@@ -43,7 +43,7 @@ Este é um projeto simples de gerenciamento de usuários que permite cadastrar, 
 
 4. **Acesse a aplicação no navegador**
     
-    ´´´bash
+    ```bash
     http://localhost:3000
 
 
