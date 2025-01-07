@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": 1736260863755,
+    "username": "Mikael",
+    "email": "carlosmikael273@gmail.com",
+    "password": "40022,789"
+  },
+  {
+    "id": 1736262073066,
+    "username": "Mikael",
+    "email": "carlosmikael273@gmail.com",
+    "password": {}
+  },
+  {
+    "id": 1736262115342,
+    "username": "Mikael",
+    "email": "carlosmikael273@gmail.com",
+    "password": "$2b$10$G0NTe05A.OZ7CinnPbJ4/u590QSVneTcUEWr0gaEeVEEHwfLzQkx2"
+  }
+]

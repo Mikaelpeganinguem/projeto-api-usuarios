@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 const { saveData, readFile } = require('./database/users/dbUser');
 const { verifyUser, getMessage } = require('../views/utils/utils');
@@ -27,17 +28,18 @@ router.get("/api/users/:id", (req, res) => {
     return res.send(findUser);
 });
 
-router.post("/api/users/", (req, res) => {
+router.post("/api/users/", async (req, res) => {
     const { username, email, password } = req.body;
 
     verifyUser(username, email, password);
 
     const users = readFile();
+    const hashPass = await bcrypt.hash(password, 10);
     const newUser = {
         id: new Date().getTime(),
-        username,
-        email,
-        password,
+        username: username,
+        email: email,
+        password: hashPass
     };
 
     users.push(newUser);
@@ -60,8 +62,8 @@ router.put("/api/users/:id", (req, res) => {
         const message = getMessage('error', "User not found");
         return res.status(404).render('user', { message });
     }
-
-    users[index] = { id: userId, username, email, password };
+    const hashPass = bcrypt.hash(password, 10);
+    users[index] = { id: userId, username, email, password: hashPass };
     saveData(users);
 
     const message = getMessage('success', "User successfully updated!");

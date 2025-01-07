@@ -27,7 +27,7 @@ table thead th {
     font-size: 14px;
     font-weight: bold;
     padding: 15px 10px;
-    text-align: left;
+    text-align: center;
 }
 
 table tbody tr:nth-child(even) {
@@ -48,7 +48,7 @@ table tbody td {
     padding: 12px 10px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
 }
 
 table tbody td:last-child {
