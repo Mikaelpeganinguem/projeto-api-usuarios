@@ -27,6 +27,7 @@
                     <th>username</th>
                     <th>Email</th>
                     <th>password</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,12 +38,17 @@
                             <td><%= user.username %></td>
                             <td><%= user.email %></td>
                             <td><%= user.password %></td>
+                            <td>
+                                <button class="editButton" data-id="<%= user.id %>">Edit</button>
+                                <button class="deleteButton" data-id="<%= user.id %>">Delete</button>
+                            </td>
                         </tr>
                     <% }); %>
                 <% } %>
-            </tbody>
+            </tbody>            
         </table>
     </div>
+    <script src="./utils/dom.js" defer></script>
 </body>
 
 </html>
