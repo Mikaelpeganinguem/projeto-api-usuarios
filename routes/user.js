@@ -46,7 +46,7 @@ router.post("/api/users/", async (req, res) => {
     saveData(users);
 
     const message = Utils.getMessage('success', "User successfully registered!");
-    return res.status(201).redirect('/api/users');
+    return res.status(201).redirect('/api/users/');
 });
 
 router.put("/api/users/:id", (req, res) => {
@@ -67,7 +67,7 @@ router.put("/api/users/:id", (req, res) => {
     saveData(users);
 
     const message = Utils.getMessage('success', "User successfully updated!");
-    return res.status(200).redirect('/api/users', { message });
+    return res.status(200).json({ message });
 });
 
 router.delete("/api/users/:id", (req, res) => {
@@ -90,7 +90,7 @@ router.delete("/api/users/:id", (req, res) => {
     saveData(users);
 
     const message = Utils.getMessage('info', "User successfully deleted!");
-    return res.status(200).redirect('/api/users', { message });
+    return res.status(200).json({ message });
 });
 
 module.exports = router;
