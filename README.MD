@@ -21,7 +21,7 @@ Este é um projeto simples de API RESTful utilizando Node.js e Express. A API ge
 1. **Clone o repositório**:
 
    ```bash
-   git clone https://github.com/Mikaelpeganinguem/projeto-api-usuarios.git
+   git clone https://github.com/Mikaelnotfound/projeto-api-usuarios.git
 
 2. **Instale as dependências**:
 
@@ -46,7 +46,7 @@ Este projeto receberá futuramente uma inteface web (com HTML e CSS), e um banco
 Se você tiver alguma dúvida ou quiser discutir sobre o projeto, pode entrar em contato!
 
 - E-mail: carlosmikael273@gmail.com
-- GitHub: [MIkaelpeganinguem](https://github.com/MIkaelpeganinguem)
+- GitHub: [Mikaelnotfound](https://github.com/Mikaelnotfound)
 
 Estou aberto a sugestões e contribuições!
 
